@@ -1,0 +1,346 @@
+{
+  "Name": "Ashutosh Sharma",
+  "Home": {
+    "Name": "Ashutosh Sharma",
+    "img": "ashu.jpg",
+    "description": "WEB DEVELOPMENT ENGINEER"
+  },
+  "AboutMe": {
+    "Name": "Ashutosh Sharma",
+    "Company": "VizExperts India Pvt. Ltd.",
+    "Designation": "Web Engineer"
+  },
+  "Contact Details": {
+    "Mobile": [
+      {
+        "Country Code": "+91",
+        "Number": "8015571944"
+      },
+      {
+        "Country Code": "+91",
+        "Number": "8015571944"
+      }
+    ],
+    "Permanent Address": {
+      "H.No": "92",
+      "Locality": "Defence Estate Phase II",
+      "City": "Agra",
+      "PinCode": "282001"
+    },
+    "Local Address": {
+      "H.No": "106",
+      "Locality": "Sector 14",
+      "City": "Gurgaon",
+      "Pincode": "122001"
+    },
+    "Email": "ashuanindian@gmail.com",
+    "Links": [
+      {
+        "GitHub": "www.github.com/ashuanindian",
+        "icon": "github.png"
+      },
+      {
+        "LinkedIn": "in.linkedin.com/in/ashuanindian",
+        "icon": "linkedin.png"
+      },
+      {
+        "Twitter": "https://twitter.com/ashuanindian",
+        "icon": "twitter.png"
+      },
+      {
+        "Facebook": "https://facebook.com/ashuanindian",
+        "icon": "fb.png"
+      },
+      {
+        "Website": "www.ashu.online",
+        "icon": "ashu.png"
+      }
+    ]
+  },
+  "Professional Summary": [
+    "Experience in development of Web & Enterprise applications using MEAN stack with ES2015 syntax, J2EE technologies and Object Oriented JavaScript.",
+    "Strong Knowledge of Node.js, Express.js, jQuery and MongoDB, React, Koa, Angular, Java, hibernate, Spring and Struts",
+    "Cohesive team worker, having strong analytical, problem solving and interpersonal skills.",
+    "Strong in Data Structures and Algorithms."
+  ],
+  "Experience": [
+    {
+      "Name": "Vizexperts Pvt. Ltd.",
+      "Start": "Jan-2016",
+      "End": "Present",
+      "Position": "Web-Engineer",
+      "Responsibilities and Achievements": [
+        "Developed REST service to maintain workspaces to store and serve raster and vector layers from GeoServer.",
+        "Captured flight data and used it to place flight icon on map in 4 different states(default, bound to snapExtents, bound to videoExtents and center map to flight icon).",
+        "Import-Export facility which exports data from one Geo Server and imports into another.",
+        "Worked extensively on openlayers API."
+      ]
+    },
+    {
+      "Name": "Zoho Corporation Pvt. Ltd.",
+      "Start": "Jun-2014",
+      "End": "Dec-2015",
+      "Position": "Member Technical Staff",
+      "Responsibilities and Achievements": [
+        "Developed a module which gathers and processes large number of logs from Exchange Servers using ADSI. Using these logs different report gets created to help windows server administrators.",
+        "Developed a framework for exporting sub-reports using jasperreports library.",
+        "Developed a common framework for four different products to bookmark reports based on login name.",
+        "Responsible for the development and enhancements of the codes and existing process wherein I have contributed with many back end enhancements and UI modifications."
+      ]
+    }
+  ],
+  "Qualification": [
+    {
+      "Degree": "M.Tech, Computer Science (Information Security)",
+      "Institute": "National Institute Of Technology, Calicut, Kerala",
+      "Start": "2012",
+      "End": "2014",
+      "CGPA": "7.67/10",
+      "Percent": ""
+    },
+    {
+      "Degree": "B.Tech, Computer Science and Engineering",
+      "Institute": "Greater Noida Institute Of Technology, Greater Noida.",
+      "Start": "2008",
+      "End": "2012",
+      "CGPA": "",
+      "Percent": "68.86"
+    },
+    {
+      "Degree": "Higher Secondary Examination(XII)",
+      "Institute": "Army School Agra Cantt, CBSE.",
+      "Start": "2007",
+      "End": "2008",
+      "CGPA": "",
+      "Percent": "80.0"
+    },
+    {
+      "Degree": "Secondary School Certificate(X)",
+      "Institute": "Army School Agra Cantt, CBSE.",
+      "Start": "2005",
+      "End": "2006",
+      "CGPA": "",
+      "Percent": "80.4"
+    }
+  ],
+  "Technical Skill Set": {
+    "Server Side Technologies": [
+      {
+        "Techology": "Node",
+        "Rating": "9"
+      },
+      {
+        "Techology": "Java",
+        "Rating": "8"
+      },
+      {
+        "Techology": "C++",
+        "Rating": "5"
+      },
+      {
+        "Techology": "C",
+        "Rating": "7"
+      }
+    ],
+    "Client Side Technologies": [
+      {
+        "Techology": "Object Oriented Javascript(ES2015)",
+        "Rating": "9"
+      },
+      {
+        "Techology": "HTML",
+        "Rating": "9"
+      },
+      {
+        "Techology": "CSS",
+        "Rating": "9"
+      },
+      {
+        "Techology": "Ajax",
+        "Rating": "9"
+      },
+      {
+        "Techology": "WebSockets",
+        "Rating": "7"
+      }
+    ],
+    "Java Technologies": [
+      {
+        "Techology": "J2EE",
+        "Rating": "8"
+      },
+      {
+        "Techology": "JSP",
+        "Rating": "8"
+      },
+      {
+        "Techology": "Jasper-Reports",
+        "Rating": "6"
+      }
+    ],
+    "Frameworks and Libraries": [
+      {
+        "Techology": "Koa",
+        "Rating": "8"
+      },
+      {
+        "Techology": "Express",
+        "Rating": "8"
+      },
+      {
+        "Techology": "Spring",
+        "Rating": "7"
+      },
+      {
+        "Techology": "Struts",
+        "Rating": "8"
+      },
+      {
+        "Techology": "jQuery",
+        "Rating": "8"
+      },
+      {
+        "Techology": "React",
+        "Rating": "7"
+      },
+      {
+        "Techology": "Dojo",
+        "Rating": "8"
+      },
+      {
+        "Techology": "Angular",
+        "Rating": "7"
+      }
+    ],
+    "DBMS and ORM": [
+      {
+        "Techology": "MongoDB",
+        "Rating": "8"
+      },
+      {
+        "Techology": "MySQL",
+        "Rating": "9"
+      },
+      {
+        "Techology": "Postgress SQL",
+        "Rating": "7"
+      },
+      {
+        "Techology": "Hibernate",
+        "Rating": "7"
+      }
+    ]
+  },
+  "Projects": {
+    "VizExperts": [
+      {
+        "Title": "IGVDS",
+        "Description": [
+          "This is a defence project which uses live video and other flight data sent by a drone on border.",
+          "I used flight data to show flight icon on map in moving state",
+          "Wrote Services to provide image processing on live video footage",
+          "Used client side map api(openlayers) for multiple small and big features"
+        ],
+        "Technologies": [
+          "Spring",
+          "Hbernate",
+          "Openlayers3",
+          "Dojo"
+        ]
+      },
+      {
+        "Title": "Georbis Server",
+        "Description": [
+          "This project provides all map services(WMS, WFS, WPS, WCS) to a client.",
+          "My responsibility in this project was to create workspace for users. Workspace stores layers loaded on a map so that next time when user will open the workspace he can start his work from where he left.",
+          "Created many reusable widgets"
+        ],
+        "Technologies": [
+          "Spring",
+          "Hbernate",
+          "Openlayers3",
+          "Dojo"
+        ]
+      }
+    ],
+    "Zoho": [
+      {
+        "Title": "Exchange Reporter Plus",
+        "Description": [
+          "This project helps windows administrator by providing them reports from their active directory environment",
+          "I wrote bookmark framework with complete drag and drop functionality and integrated it with four different products related to active directory",
+          "Created new tab monitoring which contains 14 reports, dashboard with multiple graphs",
+          "Wrote framework to export sub-reports using jasper-reports",
+          "Many minor UI and back-end modification"
+        ],
+        "Technologies": [
+          "Struts",
+          "Object Oriented Javascript",
+          "jQuery",
+          "JasperReports",
+          "ADSI"
+        ]
+      }
+    ],
+    "NIT Calicut": [
+      {
+        "Title": "Fractal Image Compression using Locality Sensitive Hashing",
+        "Description": [
+          "In this project, I have tried to reduce the complexity in comparing a range block with large number of domain blocks using locality sensitive hashing. Locality sensitive hashing clusters similar domain blocks in same bucket due to which we have to search a domain block in just one bucket whose hash value is close to range block for which we are searching domain block."
+        ],
+        "Technologies": [
+          "Matlab",
+          "Image Processing"
+        ]
+      },
+      {
+        "Title": "Implementation Of Blind Signature using RSA and Elgamal",
+        "Description": [
+          "It was an idea to implement a different signing technique called blind signature to level up the security in applications like E-Voting, E-Cash and others to hide information from the signer."
+        ],
+        "Technologies": [
+          "Python",
+          "RSA",
+          "Elgamal"
+        ]
+      },
+      {
+        "Title": "Leave Management System",
+        "Description": [
+          "This project was created to apply and manage leaves by students and teachers. Applied leave by student gets forwarded to PR if he approves, it gets forwarded to HOD. At the end of month a report was generated containing all the leaves record to calculate stipend for students and salary for teachers"
+        ],
+        "Technologies": [
+          "C#",
+          "JavaScript",
+          "jQuery"
+        ]
+      }
+    ],
+    "GNIT": [
+      {
+        "Title": "Fractal Image Compression",
+        "Description": [
+          "Wrote an algorithm according to the paper Fractal Image Compression, Yuval Fisher, 1994."
+        ],
+        "Technologies": [
+          "C",
+          "Image Processing"
+        ]
+      }
+    ]
+  },
+  "Journals & Publications": [
+    {
+      "Title": "Fractal Image Compression using Locality Sensitive Hashing",
+      "publisher": "International Journal of Engineering Research and Training.",
+      "Volume": "Vol. 3, Issue 3, March - 2014."
+    }
+  ],
+  "Area of Interest": [
+    "Data Structures",
+    "Algorithms, Database",
+    "Operating Systems",
+    "Information Security"
+  ],
+  "Workshop": "Attended Industrial Training by SAP Labs on Big Data & Mobile Computing in Nov-2013."
+}
