@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Ashutosh Sharma</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap.min.css">
 
     <meta name="viewport" content="width=device-width height=device-height initial-scale=1">
     <style>
-        html, body {
-            height: 100%;
-            width: 99.4%;
+        @media screen {
+            html, body {
+                min-height: 101%;
+                width: 99.4%;
+            }
         }
 
         .mainContent {
@@ -17,11 +19,11 @@
         }
     </style>
 </head>
-<body>
-<div style="height: 100%;" class="row">
-    <div style="height: 100%;background-color: rgb(54, 122, 144)" class="col-md-3 col-sm-3 col-xs-3">
+<body onscroll="javascript:manageScroll();">
+<div style="height: 100vh;width:101vw;position: fixed" class="row">
+    <div id="leftmenu" style="height: 100%;background-color: rgb(28, 47, 63);display:none;" class="col-md-3 col-sm-3 col-xs-3">
     </div>
-    <div id='app' style="height: 100%;background-color: #366a90" class="col-md-9 col-sm-9 col-xs-9 mainContent">
+    <div id='app' style="height: 100%;background: linear-gradient(#40656B 5% ,rgb(22, 39, 53) 30%);" class="col-md-12 col-sm-12 col-xs-12 mainContent">
     </div>
 </div>
 <script src="/Components/RootComponent.js"></script>

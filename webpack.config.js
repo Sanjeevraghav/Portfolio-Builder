@@ -37,7 +37,8 @@ module.exports = {
         new CopyWebpackPlugin([
             {from: './src/Public/index.html', to: './Public'},
             {from: './src/Public/Resume.json', to: './Public'},
-            {from: './src/Public/Images', to: './Public/Images', toType: 'dir'}
+            {from: './src/Public/Images', to: './Public/Images', toType: 'dir'},
+            {from: './src/Public/lib', to: './Public/lib', toType: 'dir'}
         ])
     ]
 };

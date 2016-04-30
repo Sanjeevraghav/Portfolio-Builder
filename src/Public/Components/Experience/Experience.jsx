@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header.jsx';
 
-class AboutMe extends Component {
+class Experience extends Component {
     render() {
         let textStyle = {
             "textAlign": "justify",
@@ -18,19 +18,25 @@ class AboutMe extends Component {
             "padding":"3%"
         };
         let descWrapper= {
-          "padding" : "2%"
+            "padding" : "2%"
         };
         return (
             <div>
                 <Header image={this.props.about.img} Name={this.props.about.Name} />
                 <div style={headingStyle}>
-                    <span>About Me</span>
+                    <span>Professional Summary</span>
                 </div>
                 <div style={descWrapper}>
-                    <span style={textStyle}>{this.props.about.description}</span>
+                    <ul>
+                        {
+                            this.props.summary.map(function(point) {
+                                return <li key={point} style={textStyle}><span>{point}</span></li>
+                            })
+                        }
+                    </ul>
                 </div>
             </div>
         );
     }
 }
-export default AboutMe;
+export default Experience;

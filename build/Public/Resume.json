@@ -1,14 +1,11 @@
 {
   "Name": "Ashutosh Sharma",
-  "Home": {
-    "Name": "Ashutosh Sharma",
-    "img": "ashu.jpg",
-    "description": "WEB DEVELOPMENT ENGINEER"
-  },
   "AboutMe": {
     "Name": "Ashutosh Sharma",
     "Company": "VizExperts India Pvt. Ltd.",
-    "Designation": "Web Engineer"
+    "Designation": "SOFTWARE ENGINEER",
+    "img": "ashu.jpg",
+    "description": "Welcome my name is Ashutosh. I am a software developer from Gurgaon, India. I Love to build great software products which helps in easing human work and help businesses succeed with their goals. I appreciates new technologies and good design(both implementation and UI). I love to learn new technologies and enhance my skill set. I have worked with few of the top businesses like ZOHO Corporation Pvt Ltd. and VizExperts India Pvt. Ltd. former is well known for its cloud solutions for businesses and its beautiful idea of first business operating system, and later is known for its defence related softwares. "
   },
   "Contact Details": {
     "Mobile": [
@@ -57,9 +54,9 @@
       }
     ]
   },
-  "Professional Summary": [
+  "ProfessionalSummary": [
     "Experience in development of Web & Enterprise applications using MEAN stack with ES2015 syntax, J2EE technologies and Object Oriented JavaScript.",
-    "Strong Knowledge of Node.js, Express.js, jQuery and MongoDB, React, Koa, Angular, Java, hibernate, Spring and Struts",
+    "Strong Knowledge of Node.js, Express.js, jQuery and MongoDB, React, Koa, Angular, Java, hibernate, Spring and Struts.",
     "Cohesive team worker, having strong analytical, problem solving and interpersonal skills.",
     "Strong in Data Structures and Algorithms."
   ],
