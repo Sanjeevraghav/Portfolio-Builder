@@ -21217,12 +21217,12 @@
 	                ),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'col-md-4 col-lg-4 col-sm-4', style: headerImageDiv },
+	                    { className: 'col-md-4 col-lg-4 col-sm-4 animation animateLeft', style: headerImageDiv },
 	                    _react2.default.createElement('img', { className: 'img-circle', style: headerImage, src: '/../Images/' + this.props.image })
 	                ),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'col-md-6 col-lg-6 col-sm-6', style: headerName },
+	                    { className: 'col-md-6 col-lg-6 col-sm-6 animation animateRight', style: headerName },
 	                    _react2.default.createElement(
 	                        'span',
 	                        null,
@@ -21726,28 +21726,32 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'nameClass properDiv' },
-	                    _react2.default.createElement('img', { className: 'img-circle', src: '/../Images/' + this.props.home.img })
+	                    _react2.default.createElement('img', { className: 'img-circle animate animateDown', src: '/../Images/' + this.props.home.img })
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'white_l_txt' },
 	                    _react2.default.createElement(
 	                        'span',
-	                        { className: 'white_sm_txt' },
-	                        'I\'M'
-	                    ),
-	                    ' ',
-	                    _react2.default.createElement(
-	                        'span',
-	                        null,
-	                        this.props.home.Name
-	                    ),
-	                    ' ',
-	                    _react2.default.createElement(
-	                        'span',
-	                        {
-	                            className: 'white_sm_txt' },
-	                        '&'
+	                        { className: 'animate animateLeft' },
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'white_sm_txt' },
+	                            'I\'M'
+	                        ),
+	                        ' ',
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            this.props.home.Name
+	                        ),
+	                        ' ',
+	                        _react2.default.createElement(
+	                            'span',
+	                            {
+	                                className: 'white_sm_txt' },
+	                            '&'
+	                        )
 	                    )
 	                ),
 	                _react2.default.createElement(
@@ -21755,15 +21759,19 @@
 	                    { className: 'properDiv white_sm_txt' },
 	                    _react2.default.createElement(
 	                        'span',
-	                        { className: 'white_sm_txt' },
-	                        'I\'M A'
-	                    ),
-	                    ' ',
-	                    _react2.default.createElement(
-	                        'span',
-	                        {
-	                            className: 'white_l_txt' },
-	                        this.props.home.Designation
+	                        { className: 'animate animateRight' },
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'white_sm_txt' },
+	                            'I\'M A'
+	                        ),
+	                        ' ',
+	                        _react2.default.createElement(
+	                            'span',
+	                            {
+	                                className: 'white_l_txt' },
+	                            this.props.home.Designation
+	                        )
 	                    )
 	                )
 	            );
@@ -21809,7 +21817,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".nameClass {\n    margin-top: 10%;\n}\n\n.homeContainer {\n    width: 100%;\n    height: 100%;\n}\n\n.properDiv {\n    width: 100%;\n    text-align: center;\n}\n\n.white_sm_txt {\n    text-align: center;\n    font-size: 20px;\n    font-family: sans-serif;\n    color: #c4c5c9;\n    margin-top: 2%;\n    text-shadow: 1px 1px 2px rgb(9, 94, 212);\n}\n\n.white_l_txt {\n    text-align: center;\n    font-size: 40px;\n    font-family: cursive;\n    color: #c4c5c9;\n    text-shadow: 1px 1px 2px rgb(9, 94, 212);\n}\n.properDivInner{\n    margin-left:1%;\n}", ""]);
+	exports.push([module.id, "@media screen {\n    html, body {\n        min-height: 100%;\n        width: 100%;\n    }\n}\n\n.mainContent {\n    padding: 0;\n    animation: colorOpacity 2s;\n    animation-duration: 1s;\n    animation-timing-function: ease-in-out;\n    animation-delay:0;\n    animation-direction:alternate;\n    animation-iteration-count: 1;\n    animation-fill-mode:none;\n    animation-play-state: running;\n}\n@keyframes colorOpacity {\n    0% {background-color: rgb(49, 67, 110); }\n    100%{background-color: rgb(22, 39, 53);}\n}\n.nameClass {\n    margin-top: 10%;\n}\n\n.homeContainer {\n    width: 100%;\n    height: 100%;\n}\n\n.properDiv {\n    width: 100%;\n    text-align: center;\n}\n\n.white_sm_txt {\n    text-align: center;\n    font-size: 20px;\n    font-family: sans-serif;\n    color: #c4c5c9;\n    margin-top: 2%;\n    text-shadow: 1px 1px 2px rgb(9, 94, 212);\n}\n\n.white_l_txt {\n    text-align: center;\n    font-size: 40px;\n    font-family: cursive;\n    color: #c4c5c9;\n    text-shadow: 1px 1px 2px rgb(9, 94, 212);\n}\n.properDivInner{\n    margin-left:1%;\n}\n.animate{\n    position:relative;\n    animation-iteration-count: 1;\n    animation-fill-mode: forwards;\n}\n.animateDown{\n    animation: moveDown 3s;\n}\n.animateLeft{\n    animation: moveLeft 2s;\n}\n.animateRight{\n    animation: moveRight 2s;\n}\n@keyframes moveDown {\n    from {bottom: 300px;opacity: 0}\n    to {bottom: 0px; opacity: 1}\n}\n@keyframes moveLeft {\n    from {right: 500px;opacity: 0}\n    to {right: 0px; opacity: 1}\n}\n@keyframes moveRight {\n    from {left: 500px;opacity: 0}\n    to {left: 0px; opacity: 1}\n}", ""]);
 	
 	// exports
 
@@ -22578,22 +22586,26 @@
 	                _react2.default.createElement(
 	                    "table",
 	                    { style: table },
-	                    (0, _keys2.default)(edu).map(function (key) {
-	                        return _react2.default.createElement(
-	                            "tr",
-	                            null,
-	                            _react2.default.createElement(
-	                                "td",
+	                    _react2.default.createElement(
+	                        "tbody",
+	                        null,
+	                        (0, _keys2.default)(edu).map(function (key) {
+	                            return _react2.default.createElement(
+	                                "tr",
 	                                null,
-	                                key
-	                            ),
-	                            _react2.default.createElement(
-	                                "td",
-	                                null,
-	                                edu[key]
-	                            )
-	                        );
-	                    })
+	                                _react2.default.createElement(
+	                                    "td",
+	                                    null,
+	                                    key
+	                                ),
+	                                _react2.default.createElement(
+	                                    "td",
+	                                    null,
+	                                    edu[key]
+	                                )
+	                            );
+	                        })
+	                    )
 	                )
 	            );
 	        }

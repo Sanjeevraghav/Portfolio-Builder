@@ -17,7 +17,8 @@ class Degree extends Component {
         let edu = this.props.degree;
         return (
             <div style={educationDiv}>
-                <table style={table}>
+                <table style={table} >
+                    <tbody>
                     {
                         Object.keys(edu).map(function(key){
                             return (<tr>
@@ -26,6 +27,7 @@ class Degree extends Component {
                             </tr>)
                         })
                     }
+                    </tbody>
                 </table>
             </div>
         );

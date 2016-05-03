@@ -31,10 +31,10 @@ class Header extends Component {
                 <div className="col-md-2 col-lg-2 col-sm-2">
                     <Humberger />
                 </div>
-                <div className="col-md-4 col-lg-4 col-sm-4" style={headerImageDiv}>
+                <div className="col-md-4 col-lg-4 col-sm-4 animation animateLeft" style={headerImageDiv}>
                     <img className="img-circle" style={headerImage} src={'/../Images/'+this.props.image}/>
                 </div>
-                <div className="col-md-6 col-lg-6 col-sm-6" style={headerName}>
+                <div className="col-md-6 col-lg-6 col-sm-6 animation animateRight" style={headerName}>
                     <span>{this.props.Name}</span>
                 </div>
             </div>
