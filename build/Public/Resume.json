@@ -60,63 +60,59 @@
     "Cohesive team worker, having strong analytical, problem solving and interpersonal skills.",
     "Strong in Data Structures and Algorithms."
   ],
-  "Experience": [
-    {
+  "Experience": {
+    "vizexperts": {
       "Name": "Vizexperts Pvt. Ltd.",
       "Start": "Jan-2016",
       "End": "Present",
       "Position": "Web-Engineer",
-      "Responsibilities and Achievements": [
+      "ResponsibilitiesAndAchievements": [
         "Developed REST service to maintain workspaces to store and serve raster and vector layers from GeoServer.",
         "Captured flight data and used it to place flight icon on map in 4 different states(default, bound to snapExtents, bound to videoExtents and center map to flight icon).",
         "Import-Export facility which exports data from one Geo Server and imports into another.",
         "Worked extensively on openlayers API."
       ]
     },
-    {
+    "zoho": {
       "Name": "Zoho Corporation Pvt. Ltd.",
       "Start": "Jun-2014",
       "End": "Dec-2015",
       "Position": "Member Technical Staff",
-      "Responsibilities and Achievements": [
+      "ResponsibilitiesAndAchievements": [
         "Developed a module which gathers and processes large number of logs from Exchange Servers using ADSI. Using these logs different report gets created to help windows server administrators.",
         "Developed a framework for exporting sub-reports using jasperreports library.",
         "Developed a common framework for four different products to bookmark reports based on login name.",
         "Responsible for the development and enhancements of the codes and existing process wherein I have contributed with many back end enhancements and UI modifications."
       ]
     }
-  ],
+  },
   "Qualification": [
     {
       "Degree": "M.Tech, Computer Science (Information Security)",
-      "Institute": "National Institute Of Technology, Calicut, Kerala",
+      "Institute": "National Institute Of Technology, Calicut",
       "Start": "2012",
       "End": "2014",
-      "CGPA": "7.67/10",
-      "Percent": ""
+      "CGPA": "7.67/10"
     },
     {
       "Degree": "B.Tech, Computer Science and Engineering",
-      "Institute": "Greater Noida Institute Of Technology, Greater Noida.",
+      "Institute": "Greater Noida Institute Of Technology",
       "Start": "2008",
       "End": "2012",
-      "CGPA": "",
       "Percent": "68.86"
     },
     {
-      "Degree": "Higher Secondary Examination(XII)",
+      "Degree": "Higher Secondary Examination ( XII )",
       "Institute": "Army School Agra Cantt, CBSE.",
       "Start": "2007",
       "End": "2008",
-      "CGPA": "",
       "Percent": "80.0"
     },
     {
-      "Degree": "Secondary School Certificate(X)",
+      "Degree": "Secondary School Certificate ( X )",
       "Institute": "Army School Agra Cantt, CBSE.",
       "Start": "2005",
       "End": "2006",
-      "CGPA": "",
       "Percent": "80.4"
     }
   ],

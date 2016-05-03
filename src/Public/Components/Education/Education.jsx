@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header.jsx';
+import Degree from './Degree.jsx';
 
-class AboutMe extends Component {
+class Education extends Component {
     render() {
         let textStyle = {
             "textAlign": "justify",
@@ -18,7 +19,7 @@ class AboutMe extends Component {
             "padding":"3%"
         };
         let descWrapper= {
-          "padding" : "2%"
+            "padding" : "2%"
         };
         let underline = {
             "display" :"inline-block",
@@ -32,13 +33,17 @@ class AboutMe extends Component {
             <div>
                 <Header image={this.props.about.img} Name={this.props.about.Name} />
                 <div style={headingStyle}>
-                    <span style={underline}>About Me</span>
+                    <span style={underline}>Education</span>
                 </div>
-                <div style={descWrapper}>
-                    <span style={textStyle}>{this.props.about.description}</span>
+                <div>
+                    {
+                        this.props.education.map(function(deg) {
+                            return <Degree degree={deg} />
+                        })
+                    }
                 </div>
             </div>
         );
     }
 }
-export default AboutMe;
+export default Education;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header.jsx';
 
-class AboutMe extends Component {
+class ProfessionalSummary extends Component {
     render() {
         let textStyle = {
             "textAlign": "justify",
@@ -18,11 +18,11 @@ class AboutMe extends Component {
             "padding":"3%"
         };
         let descWrapper= {
-          "padding" : "2%"
+            "padding" : "2%"
         };
         let underline = {
             "display" :"inline-block",
-            "width" : "200px",
+            "width" : "350px",
             "borderBottom":"groove",
             "borderBottomLeftRadius":"100px",
             "borderBottomRightRadius":"100px",
@@ -32,13 +32,19 @@ class AboutMe extends Component {
             <div>
                 <Header image={this.props.about.img} Name={this.props.about.Name} />
                 <div style={headingStyle}>
-                    <span style={underline}>About Me</span>
+                    <span style={underline}>Professional Summary</span>
                 </div>
                 <div style={descWrapper}>
-                    <span style={textStyle}>{this.props.about.description}</span>
+                    <ul>
+                        {
+                            this.props.summary.map(function(point) {
+                               return <li key={point} style={textStyle}><span>{point}</span></li>
+                            })
+                        }
+                    </ul>
                 </div>
             </div>
         );
     }
 }
-export default AboutMe;
+export default ProfessionalSummary;

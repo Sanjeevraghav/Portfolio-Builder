@@ -10,26 +10,53 @@ class Experience extends Component {
             "color": "rgb(138, 158, 179)",
         };
         let headingStyle = {
-            "paddingTop": "5%",
+            "paddingTop": "3%",
             "textAlign": "center",
-            "fontSize": "25px",
+            "fontSize": "28px",
             "fontFamily": "sarif",
             "color": "rgb(138, 158, 179)",
-            "padding":"3%"
+            "paddingBottom": "1%"
         };
-        let descWrapper= {
-            "padding" : "2%"
+        let companyDesc = {
+            "textAlign": "center",
+            "fontSize": "22px",
+            "fontFamily": "sarif",
+            "color": "rgb(138, 158, 179)",
+            "margin": "1%",
+            "margin-bottom":"2%"
+        };
+        let descWrapper = {
+            "padding": "2%"
+        };
+        let underline = {
+            "display" :"inline-block",
+            "width" : "250px",
+            "borderBottom":"groove",
+            "borderBottomLeftRadius":"100px",
+            "borderBottomRightRadius":"100px",
+            "borderBottomStyle" :"1px solid"
         };
         return (
             <div>
-                <Header image={this.props.about.img} Name={this.props.about.Name} />
+                <Header image={this.props.about.img} Name={this.props.about.Name}/>
                 <div style={headingStyle}>
-                    <span>Professional Summary</span>
+                    <span style={underline}>Experience</span>
                 </div>
                 <div style={descWrapper}>
+                    <div style={companyDesc}>
+                        <div>
+                            <span>{this.props.experience.Name}</span>
+                        </div>
+                        <div>
+                            <span>{this.props.experience.Position}</span>
+                        </div>
+                        <div>
+                            From <span>{this.props.experience.Start}</span> to <span>{this.props.experience.End}</span>
+                        </div>
+                    </div>
                     <ul>
                         {
-                            this.props.summary.map(function(point) {
+                            this.props.experience.ResponsibilitiesAndAchievements.map(function (point) {
                                 return <li key={point} style={textStyle}><span>{point}</span></li>
                             })
                         }
