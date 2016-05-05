@@ -4,6 +4,7 @@
   "description": "Creates Portfolio website from json file",
   "main": "/build/Server/server.js",
   "scripts": {
+    "start" : "node build/Server/server.js",
     "webpack": "webpack --progress --color --watch",
     "babel": "./node_modules/.bin/babel -w src/Server -d build/Server -s --source-maps",
     "build": "npm run webpack & npm run babel",
