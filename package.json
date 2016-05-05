@@ -38,5 +38,8 @@
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-router": "^2.3.0"
+  },
+  "engines": {
+    "node": "5.11.0"
   }
 }
