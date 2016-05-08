@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -39,6 +40,7 @@ module.exports = {
             {from: './src/Public/Resume.json', to: './Public'},
             {from: './src/Public/Images', to: './Public/Images', toType: 'dir'},
             {from: './src/Public/lib', to: './Public/lib', toType: 'dir'}
-        ])
+        ]),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 };

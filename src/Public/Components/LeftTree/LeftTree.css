@@ -1,0 +1,65 @@
+.leftTreeul{
+    margin-top: 10%;
+    color:white;
+}
+.leftTreeInnerul{
+    padding-left: 10px;
+}
+.leftTreeli{
+    animation: leftTreeshrink 2s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    height: 25px;
+    line-height: 20px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 8px;
+    list-style: none;
+    text-decoration: none;
+    width:5px;
+}
+.leftTreeli:hover{
+    animation: leftTreeexpand 2s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    height: 25px;
+    line-height: 20px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 8px;
+    list-style: none;
+    text-decoration: none;
+    width:5px;
+}
+.leftTreeLink{
+    padding-left: 15px;
+    width : 250px;
+    display: block;
+    color:#9DB9CE;
+    text-shadow: 0px 0px 3px #333;
+}
+.leftTreeLink:hover{
+    padding-left: 15px;
+    width : 250px;
+    display: block;
+    color:#9DB9CE;
+    text-shadow: 0px 0px 3px #333;
+}
+@keyframes leftTreeshrink {
+    0% {
+        width: 250px;
+        padding-left: 20px;
+    }
+    100% {
+        width: 5px;
+        padding-left: 0px;
+    }
+}
+@keyframes leftTreeexpand {
+    100% {
+        width: 250px;
+        padding-left: 20px;
+    }
+    0% {
+        width: 5px;
+        padding-left: 0px;
+    }
+}

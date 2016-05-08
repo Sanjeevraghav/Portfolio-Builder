@@ -1,13 +1,27 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header.jsx';
 
-class Experience extends Component {
+class Projects extends Component {
     render() {
         let textStyle = {
             "textAlign": "justify",
             "fontSize": "20px",
             "fontFamily": "sarif",
+            "color": "rgb(138, 158, 179)"
+        };
+        let techStyle = {
+            "textAlign": "center",
+            "fontSize": "20px",
+            "fontFamily": "sarif",
             "color": "rgb(138, 158, 179)",
+            "minWidth" : "17%",
+            "float" : "left",
+            "margin":"1%",
+            "padding" : "1%",
+            "backgroundColor" : "#1C2F3F",
+            "listStyle" :"none",
+            "borderRadius": "40%",
+            "boxShadow": "1px 1px 2px blue"
         };
         let headingStyle = {
             "paddingTop": "3%",
@@ -42,30 +56,41 @@ class Experience extends Component {
             <div>
                 <Header image={this.props.about.img} Name={this.props.about.Name}/>
                 <div style={headingStyle}>
-                    <span style={underline}>Experience</span>
+                    <span style={underline}>Project</span>
                 </div>
                 <div style={descWrapper}>
                     <div style={companyDesc}>
                         <div>
-                            <span>{this.props.experience.Name}</span>
+                            <span>{this.props.project.Title}</span>
                         </div>
                         <div>
-                            <span>{this.props.experience.Position}</span>
-                        </div>
-                        <div>
-                            From <span>{this.props.experience.Start}</span> to <span>{this.props.experience.End}</span>
+                            <span>{this.props.project.Company}</span>
                         </div>
                     </div>
                     <ul>
                         {
-                            this.props.experience.ResponsibilitiesAndAchievements.map(function (point) {
-                                return <li key={point} style={textStyle}><span>{point}</span></li>
+                            this.props.project.Description.map(desc => {
+                                return <li key={desc} style={textStyle}><span>{desc}</span></li>
                             })
                         }
                     </ul>
+                    <div style={companyDesc}>
+                        <div>
+                            <span>Technologies</span>
+                        </div>
+                    </div>
+                    <div>
+                    <ul>
+                        {
+                            this.props.project.Technologies.map(tech => {
+                                return <li key={tech} style={techStyle}><span>{tech}</span></li>
+                            })
+                        }
+                    </ul>
+                        </div>
                 </div>
             </div>
         );
     }
 }
-export default Experience;
+export default Projects;

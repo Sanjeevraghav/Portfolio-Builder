@@ -7,7 +7,7 @@
     "img": "ashu.jpg",
     "description": "Welcome my name is Ashutosh. I am a software developer from Gurgaon, India. I Love to build great software products which helps in easing human work and help businesses succeed with their goals. I appreciates new technologies and good design(both implementation and UI). I love to learn new technologies and enhance my skill set. I have worked with few of the top businesses like ZOHO Corporation Pvt Ltd. and VizExperts India Pvt. Ltd. former is well known for its cloud solutions for businesses and its beautiful idea of first business operating system, and later is known for its defence related softwares. "
   },
-  "Contact Details": {
+  "ContactDetails": {
     "Mobile": [
       {
         "Country Code": "+91",
@@ -116,118 +116,114 @@
       "Percent": "80.4"
     }
   ],
-  "Technical Skill Set": {
+  "TechnicalSkillSet": {
     "Server Side Technologies": [
       {
         "Techology": "Node",
-        "Rating": "9"
+        "Rating": "90"
       },
       {
         "Techology": "Java",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
         "Techology": "C++",
-        "Rating": "5"
+        "Rating": "50"
       },
       {
         "Techology": "C",
-        "Rating": "7"
+        "Rating": "70"
       }
     ],
     "Client Side Technologies": [
       {
-        "Techology": "Object Oriented Javascript(ES2015)",
-        "Rating": "9"
+        "Techology": "Javascript (ES2015)",
+        "Rating": "90"
       },
       {
         "Techology": "HTML",
-        "Rating": "9"
+        "Rating": "90"
       },
       {
         "Techology": "CSS",
-        "Rating": "9"
+        "Rating": "90"
       },
       {
         "Techology": "Ajax",
-        "Rating": "9"
+        "Rating": "90"
       },
       {
         "Techology": "WebSockets",
-        "Rating": "7"
+        "Rating": "70"
       }
     ],
     "Java Technologies": [
       {
         "Techology": "J2EE",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
         "Techology": "JSP",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
-        "Techology": "Jasper-Reports",
-        "Rating": "6"
+        "Techology": "Jasper Reports",
+        "Rating": "60"
       }
     ],
     "Frameworks and Libraries": [
       {
         "Techology": "Koa",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
         "Techology": "Express",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
         "Techology": "Spring",
-        "Rating": "7"
+        "Rating": "70"
       },
       {
         "Techology": "Struts",
-        "Rating": "8"
-      },
-      {
-        "Techology": "jQuery",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
         "Techology": "React",
-        "Rating": "7"
+        "Rating": "70"
       },
       {
         "Techology": "Dojo",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
         "Techology": "Angular",
-        "Rating": "7"
+        "Rating": "70"
       }
     ],
     "DBMS and ORM": [
       {
         "Techology": "MongoDB",
-        "Rating": "8"
+        "Rating": "80"
       },
       {
         "Techology": "MySQL",
-        "Rating": "9"
+        "Rating": "90"
       },
       {
         "Techology": "Postgress SQL",
-        "Rating": "7"
+        "Rating": "70"
       },
       {
         "Techology": "Hibernate",
-        "Rating": "7"
+        "Rating": "70"
       }
     ]
   },
-  "Projects": {
-    "VizExperts": [
+  "Projects": [
       {
         "Title": "IGVDS",
+        "Company" : "VizExperts India Pvt. Ltd.",
         "Description": [
           "This is a defence project which uses live video and other flight data sent by a drone on border.",
           "I used flight data to show flight icon on map in moving state",
@@ -236,13 +232,14 @@
         ],
         "Technologies": [
           "Spring",
-          "Hbernate",
+          "Hibernate",
           "Openlayers3",
           "Dojo"
         ]
       },
       {
         "Title": "Georbis Server",
+        "Company" : "VizExperts India Pvt. Ltd.",
         "Description": [
           "This project provides all map services(WMS, WFS, WPS, WCS) to a client.",
           "My responsibility in this project was to create workspace for users. Workspace stores layers loaded on a map so that next time when user will open the workspace he can start his work from where he left.",
@@ -254,11 +251,10 @@
           "Openlayers3",
           "Dojo"
         ]
-      }
-    ],
-    "Zoho": [
+      },
       {
         "Title": "Exchange Reporter Plus",
+        "Company" : "Zoho Corporation Pvt. Ltd.",
         "Description": [
           "This project helps windows administrator by providing them reports from their active directory environment",
           "I wrote bookmark framework with complete drag and drop functionality and integrated it with four different products related to active directory",
@@ -268,16 +264,15 @@
         ],
         "Technologies": [
           "Struts",
-          "Object Oriented Javascript",
+          "OO Javascript",
           "jQuery",
           "JasperReports",
           "ADSI"
         ]
-      }
-    ],
-    "NIT Calicut": [
+      },
       {
         "Title": "Fractal Image Compression using Locality Sensitive Hashing",
+        "Company" : "NIT Calicut",
         "Description": [
           "In this project, I have tried to reduce the complexity in comparing a range block with large number of domain blocks using locality sensitive hashing. Locality sensitive hashing clusters similar domain blocks in same bucket due to which we have to search a domain block in just one bucket whose hash value is close to range block for which we are searching domain block."
         ],
@@ -288,6 +283,7 @@
       },
       {
         "Title": "Implementation Of Blind Signature using RSA and Elgamal",
+        "Company" : "NIT Calicut",
         "Description": [
           "It was an idea to implement a different signing technique called blind signature to level up the security in applications like E-Voting, E-Cash and others to hide information from the signer."
         ],
@@ -299,6 +295,7 @@
       },
       {
         "Title": "Leave Management System",
+        "Company" : "NIT Calicut",
         "Description": [
           "This project was created to apply and manage leaves by students and teachers. Applied leave by student gets forwarded to PR if he approves, it gets forwarded to HOD. At the end of month a report was generated containing all the leaves record to calculate stipend for students and salary for teachers"
         ],
@@ -307,11 +304,10 @@
           "JavaScript",
           "jQuery"
         ]
-      }
-    ],
-    "GNIT": [
+      },
       {
         "Title": "Fractal Image Compression",
+        "Company" : "GNIT Gr. Noida",
         "Description": [
           "Wrote an algorithm according to the paper Fractal Image Compression, Yuval Fisher, 1994."
         ],
@@ -320,20 +316,51 @@
           "Image Processing"
         ]
       }
-    ]
-  },
-  "Journals & Publications": [
+  ],
+  "JournalsPublications": [
     {
       "Title": "Fractal Image Compression using Locality Sensitive Hashing",
       "publisher": "International Journal of Engineering Research and Training.",
       "Volume": "Vol. 3, Issue 3, March - 2014."
     }
   ],
-  "Area of Interest": [
-    "Data Structures",
-    "Algorithms, Database",
-    "Operating Systems",
-    "Information Security"
-  ],
-  "Workshop": "Attended Industrial Training by SAP Labs on Big Data & Mobile Computing in Nov-2013."
+  "LeftTree": {
+    "Home": "/",
+    "About me": "/aboutme",
+    "Summary": "/summary",
+    "Education": "/education",
+    "Experience": [
+      {
+        "Zoho": "/experience/zoho"
+      },
+      {
+        "Vizexperts": "/experience/vizexperts"
+      }
+    ],
+    "Projects" :[
+      {
+        "IGVDS" : "/projects/0"
+      },
+      {
+        "Georbis Server" : "/projects/1"
+      },
+      {
+        "Exchange Reporter Plus" : "/projects/2"
+      },
+      {
+        "Fractal Image Compression (Major)" : "/projects/3"
+      },
+      {
+        "Blind Signature" : "/projects/4"
+      },
+      {
+        "Leave Management System" : "/projects/5"
+      },
+      {
+        "Fractal Image Compression (Minor)" : "/projects/6"
+      }
+    ],
+    "Technical Skill Set" : "/skills",
+    "Publications" : "/publications"
+  }
 }

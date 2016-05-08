@@ -5,6 +5,10 @@ import Home from './Home/home.jsx';
 import ProfessionalSummary from './ProfessionalSummary/ProfessionalSummary.jsx';
 import Experience from './Experience/Experience.jsx';
 import Education from './Education/Education.jsx';
+import LeftTree from './LeftTree/LeftTree.jsx';
+import Projects from './Projects/Projects.jsx';
+import Skills from './Skills/Skills.jsx';
+import Publications from './Publications/Publications.jsx';
 
 export class HomeWrapper extends Component{
     render(){
@@ -45,3 +49,36 @@ export class EducationWrapper extends Component{
         )
     }
 }
+
+export class ProjectsWrapper extends Component{
+    render(){
+        let {index} = this.props.params;
+        return (
+            <Projects about={resume.AboutMe} project = {resume.Projects[index]} />
+        )
+    }
+}
+
+export class SkillsWrapper extends Component{
+    render(){
+        return (
+            <Skills about={resume.AboutMe} skills = {resume.TechnicalSkillSet} />
+        )
+    }
+}
+export class PublicationWrapper extends Component{
+    render(){
+        return (
+            <Publications about={resume.AboutMe} publication = {resume.JournalsPublications} />
+        )
+    }
+}
+
+export class LeftTreeWrapper extends Component{
+    render(){
+        return (
+            <LeftTree leftTreeDataSource = {resume.LeftTree} />
+        )
+    }
+}
+

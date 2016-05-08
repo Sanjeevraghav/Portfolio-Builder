@@ -18,7 +18,9 @@ class ProfessionalSummary extends Component {
             "padding":"3%"
         };
         let descWrapper= {
-            "padding" : "2%"
+            "paddingLeft" : "8%",
+            "paddingRight" : "8%",
+            "paddingTop":"3%"
         };
         let underline = {
             "display" :"inline-block",

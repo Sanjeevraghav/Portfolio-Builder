@@ -20,6 +20,14 @@ var _koaRouter = require('koa-router');
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
+var _koaCompress = require('koa-compress');
+
+var _koaCompress2 = _interopRequireDefault(_koaCompress);
+
+var _zlib = require('zlib');
+
+var _zlib2 = _interopRequireDefault(_zlib);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = new _koa2.default(); /**
@@ -28,6 +36,7 @@ var app = new _koa2.default(); /**
 
 var router = (0, _koaRouter2.default)();
 
+app.use((0, _koaCompress2.default)({ flush: _zlib2.default.Z_SYNC_FLUSH }));
 app.use((0, _koaStatic2.default)(__dirname + "/../Public"));
 
 router.get("/", function () {
