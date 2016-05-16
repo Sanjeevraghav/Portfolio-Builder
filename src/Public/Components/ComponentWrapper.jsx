@@ -9,6 +9,7 @@ import LeftTree from './LeftTree/LeftTree.jsx';
 import Projects from './Projects/Projects.jsx';
 import Skills from './Skills/Skills.jsx';
 import Publications from './Publications/Publications.jsx';
+import ContactDetails from './ContactDetails/ContactDetails.jsx';
 
 export class HomeWrapper extends Component{
     render(){
@@ -66,10 +67,19 @@ export class SkillsWrapper extends Component{
         )
     }
 }
+
 export class PublicationWrapper extends Component{
     render(){
         return (
             <Publications about={resume.AboutMe} publication = {resume.JournalsPublications} />
+        )
+    }
+}
+
+export class ContactDetailsWrapper extends Component{
+    render(){
+        return (
+            <ContactDetails about={resume.AboutMe} contact = {resume.ContactDetails} />
         )
     }
 }

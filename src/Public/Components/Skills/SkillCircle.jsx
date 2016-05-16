@@ -3,7 +3,8 @@ import circlecss from './circle.css';
 
 class SkillCircle extends Component {
     render() {
-        let ratingno = "c100 " + "p"+this.props.skill.Rating+ " small";
+        let size = this.props.size || "small";
+        let ratingno = "c100 " + "p"+this.props.skill.Rating+ " " + size;
         return (
                 <div className={ratingno}>
                     <span>{this.props.skill.Techology}</span>

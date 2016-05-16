@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header.jsx';
+import Technology from '../Skills/SkillCircle.jsx';
 
 class Projects extends Component {
     render() {
@@ -22,6 +23,10 @@ class Projects extends Component {
             "listStyle" :"none",
             "borderRadius": "40%",
             "boxShadow": "1px 1px 2px blue"
+        };
+        let centerAlign = {
+          "overflow" :"hidden",
+            "textAlign" : "center"
         };
         let headingStyle = {
             "paddingTop": "3%",
@@ -79,15 +84,14 @@ class Projects extends Component {
                             <span>Technologies</span>
                         </div>
                     </div>
-                    <div>
-                    <ul>
+                    <div style={centerAlign}>
                         {
                             this.props.project.Technologies.map(tech => {
-                                return <li key={tech} style={techStyle}><span>{tech}</span></li>
+                                let skill = {"Techology" : tech, "Rating" : "50"}
+                               return (<Technology skill={skill} />);
                             })
                         }
-                    </ul>
-                        </div>
+                    </div>
                 </div>
             </div>
         );

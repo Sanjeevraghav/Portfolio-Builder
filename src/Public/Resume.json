@@ -12,10 +12,6 @@
       {
         "Country Code": "+91",
         "Number": "8015571944"
-      },
-      {
-        "Country Code": "+91",
-        "Number": "8015571944"
       }
     ],
     "Permanent Address": {
@@ -361,6 +357,7 @@
       }
     ],
     "Technical Skill Set" : "/skills",
-    "Publications" : "/publications"
+    "Publications" : "/publications",
+    "Contact" : "/contact"
   }
 }

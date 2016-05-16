@@ -31,15 +31,8 @@ class Skills extends Component {
             "height" : "100%",
             "position" : "relative"
         };
-        let backgroundColors = {
-            "Server Side Technologies" : "red",
-            "Client Side Technologies" : "green",
-            "Java Technologies" : "blue",
-            "Frameworks and Libraries" : "yellow",
-            "DBMS and ORM" : "orange"
-        };
         let aligntech = {
-          "textAlign" : "center",
+          "textAlign" : "left",
             "overflow" : "hidden",
             "paddingLeft" : "3%"
         };
@@ -66,7 +59,7 @@ class Skills extends Component {
                                 {
                                     this.props.skills[key].map(skill=> {
                                         return (
-                                            <Skill color={backgroundColors[key]} skill={skill}/>
+                                            <Skill skill={skill}/>
                                         )
                                     })
                                 }

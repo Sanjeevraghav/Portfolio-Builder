@@ -228,7 +228,7 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  float: left;
+  display:inline-block;
   margin: 0 0.1em 0.1em 0;
   background-color: #cc514c;
 }
