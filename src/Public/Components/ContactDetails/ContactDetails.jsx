@@ -10,8 +10,8 @@ class ContactDetails extends Component {
             "height": "80vh",
             "color": "white",
             "padding": "5%",
-            "borderRight": "2px solid rgb(56, 92, 123)",
-            "borderLeft": "2px solid rgb(56, 92, 123)",
+            "borderRight": "2px solid rgb(0, 0, 0)",
+            "borderLeft": "2px solid rgb(0, 0, 0)",
             "borderRadius": "10%"
         };
         let colWidth = {
@@ -29,9 +29,38 @@ class ContactDetails extends Component {
         let showMessage = function(){
             alert("hello");
         };
+        let parentIconDiv = {
+            "width" : "100px",
+            "position" : "absolute",
+            "left" : "calc(50% - 30px)",
+            "top" : "calc(50% - 60px)"
+        };
+        let socialicon = {
+          "width" : "30px",
+            "height" : "30px"
+        };
+        let alignicon = "right";
         return (
             <div>
                 <Header image={this.props.about.img} Name={this.props.about.Name}/>
+                <div style={parentIconDiv}>
+                    {
+                        this.props.contact.Links.map( link => {
+                            let style= {
+                                "textAlign" : alignicon,
+                                "width" : "60px"
+                            };
+                            alignicon = (alignicon === "left") ? "right" : "left";
+                           return (
+                               <div style={style}>
+                                   <a href={link.src} target="_blank">
+                                       <img src={"../../Images/"+link.icon} style={socialicon}/>
+                                   </a>
+                               </div>
+                           )
+                        })
+                    }
+                </div>
                 <div style={alignDiv}>
                     <div style={contact}>
                         <div>

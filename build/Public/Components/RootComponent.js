@@ -22147,24 +22147,20 @@
 			"Email": "ashutosh@ashu.online",
 			"Links": [
 				{
-					"GitHub": "www.github.com/ashuanindian",
-					"icon": "github.png"
+					"src": "http://www.github.com/ashuanindian",
+					"icon": "github-logo.svg"
 				},
 				{
-					"LinkedIn": "in.linkedin.com/in/ashuanindian",
-					"icon": "linkedin.png"
+					"src": "http://in.linkedin.com/in/ashuanindian",
+					"icon": "linkedin-logo.svg"
 				},
 				{
-					"Twitter": "https://twitter.com/ashuanindian",
-					"icon": "twitter.png"
+					"src": "https://twitter.com/ashuanindian",
+					"icon": "twitter-logo.svg"
 				},
 				{
-					"Facebook": "https://facebook.com/ashuanindian",
-					"icon": "fb.png"
-				},
-				{
-					"Website": "www.ashu.online",
-					"icon": "ashu.png"
+					"src": "https://facebook.com/ashuanindian",
+					"icon": "facebook-logo.svg"
 				}
 			]
 		},
@@ -29700,8 +29696,8 @@
 	                "height": "80vh",
 	                "color": "white",
 	                "padding": "5%",
-	                "borderRight": "2px solid rgb(56, 92, 123)",
-	                "borderLeft": "2px solid rgb(56, 92, 123)",
+	                "borderRight": "2px solid rgb(0, 0, 0)",
+	                "borderLeft": "2px solid rgb(0, 0, 0)",
 	                "borderRadius": "10%"
 	            };
 	            var colWidth = {
@@ -29719,10 +29715,41 @@
 	            var showMessage = function showMessage() {
 	                alert("hello");
 	            };
+	            var parentIconDiv = {
+	                "width": "100px",
+	                "position": "absolute",
+	                "left": "calc(50% - 30px)",
+	                "top": "calc(50% - 60px)"
+	            };
+	            var socialicon = {
+	                "width": "30px",
+	                "height": "30px"
+	            };
+	            var alignicon = "right";
 	            return _react2.default.createElement(
 	                'div',
 	                null,
 	                _react2.default.createElement(_Header2.default, { image: this.props.about.img, Name: this.props.about.Name }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: parentIconDiv },
+	                    this.props.contact.Links.map(function (link) {
+	                        var style = {
+	                            "textAlign": alignicon,
+	                            "width": "60px"
+	                        };
+	                        alignicon = alignicon === "left" ? "right" : "left";
+	                        return _react2.default.createElement(
+	                            'div',
+	                            { style: style },
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: link.src, target: '_blank' },
+	                                _react2.default.createElement('img', { src: "../../Images/" + link.icon, style: socialicon })
+	                            )
+	                        );
+	                    })
+	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    { style: alignDiv },

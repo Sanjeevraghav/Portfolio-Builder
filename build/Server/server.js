@@ -84,15 +84,13 @@ router.post("/message", function () {
                         console.log(this.request.body);
 
                         options = {
-                            service: 'gmail',
+                            service: 'Gmail',
                             port: 587,
                             auth: {
                                 user: 'ashuanindian@gmail.com',
                                 pass: '09101990'
                             },
-                            tls: {
-                                secureProtocol: "TLSv1_method"
-                            }
+                            debug: true
                         };
                         // create reusable transporter object using the default SMTP transport
 

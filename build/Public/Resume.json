@@ -29,25 +29,22 @@
     "Email": "ashutosh@ashu.online",
     "Links": [
       {
-        "GitHub": "www.github.com/ashuanindian",
-        "icon": "github.png"
+        "src": "http://www.github.com/ashuanindian",
+        "icon": "github-logo.svg"
       },
       {
-        "LinkedIn": "in.linkedin.com/in/ashuanindian",
-        "icon": "linkedin.png"
+        "src": "http://in.linkedin.com/in/ashuanindian",
+        "icon": "linkedin-logo.svg"
       },
       {
-        "Twitter": "https://twitter.com/ashuanindian",
-        "icon": "twitter.png"
+        "src": "https://twitter.com/ashuanindian",
+        "icon": "twitter-logo.svg"
       },
       {
-        "Facebook": "https://facebook.com/ashuanindian",
-        "icon": "fb.png"
-      },
-      {
-        "Website": "www.ashu.online",
-        "icon": "ashu.png"
+        "src": "https://facebook.com/ashuanindian",
+        "icon": "facebook-logo.svg"
       }
+
     ]
   },
   "ProfessionalSummary": [
