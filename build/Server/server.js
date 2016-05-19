@@ -36,12 +36,17 @@ var _nodemailer = require('nodemailer');
 
 var _nodemailer2 = _interopRequireDefault(_nodemailer);
 
+var _nodemailerSmtpTransport = require('nodemailer-smtp-transport');
+
+var _nodemailerSmtpTransport2 = _interopRequireDefault(_nodemailerSmtpTransport);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var app = new _koa2.default(); /**
-                                * Created by ashutosh on 23/04/16.
-                                */
+/**
+ * Created by ashutosh on 23/04/16.
+ */
 
+var app = new _koa2.default();
 var router = new _koaRouter2.default();
 
 app.use((0, _koaCompress2.default)({ flush: _zlib2.default.Z_SYNC_FLUSH }));
@@ -71,14 +76,26 @@ router.get("/", function () {
 
 router.post("/message", function () {
     var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(ctx, next) {
-        var transporter, mailOptions;
+        var options, transporter, mailOptions;
         return _regenerator2.default.wrap(function _callee2$(_context2) {
             while (1) {
                 switch (_context2.prev = _context2.next) {
                     case 0:
                         console.log(this.request.body);
+
+                        options = {
+                            service: 'gmail',
+                            auth: {
+                                user: 'ashuanindian@gmail.com',
+                                pass: '09101990'
+                            },
+                            tls: {
+                                secureProtocol: "TLSv1_method"
+                            }
+                        };
                         // create reusable transporter object using the default SMTP transport
-                        transporter = _nodemailer2.default.createTransport('smtps://ashuanindian%40gmail.com:09101990@smtp.gmail.com');
+
+                        transporter = _nodemailer2.default.createTransport((0, _nodemailerSmtpTransport2.default)(options));
 
                         // setup e-mail data with unicode symbols
 
@@ -97,13 +114,13 @@ router.post("/message", function () {
                             }
                             console.log('Message sent: ' + info.response);
                         });
-                        _context2.next = 6;
+                        _context2.next = 7;
                         return (0, _koaStatic2.default)('../Public/index.html');
 
-                    case 6:
+                    case 7:
                         this.body = _context2.sent;
 
-                    case 7:
+                    case 8:
                     case 'end':
                         return _context2.stop();
                 }

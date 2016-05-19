@@ -10,6 +10,7 @@ import compress from 'koa-compress';
 import zlib from 'zlib';
 import bodyparser from 'koa-bodyparser';
 import nodemailer from 'nodemailer';
+import smtpTransport from 'nodemailer-smtp-transport';
 
 const app = new Koa();
 const router = new Router();
@@ -25,11 +26,22 @@ router.get("/", async function(ctx, next){
 
 router.post("/message", async function(ctx, next) {
     console.log(this.request.body);
+
+    let options = {
+        service: 'gmail',
+        auth: {
+            user: 'ashuanindian@gmail.com',
+            pass: '09101990'
+        },
+        tls:{
+            secureProtocol: "TLSv1_method"
+        }
+    };
     // create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport('smtps://ashuanindian%40gmail.com:09101990@smtp.gmail.com');
+    let transporter = nodemailer.createTransport(smtpTransport(options));
 
 // setup e-mail data with unicode symbols
-    var mailOptions = {
+    let mailOptions = {
         from: 'Ashutosh Sharma ✔ <ashutosh@ashu.online>', // sender address
         to: 'ashuanindian@gmail.com, ashutosh@ashu.online', // list of receivers
         subject: 'Hi Ashutosh you got a message from '+ this.request.body.name, // Subject line

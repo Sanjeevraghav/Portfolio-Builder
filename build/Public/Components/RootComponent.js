@@ -29716,6 +29716,9 @@
 	            var txtareaStyle = {
 	                "height": "30vh"
 	            };
+	            var showMessage = function showMessage() {
+	                alert("hello");
+	            };
 	            return _react2.default.createElement(
 	                'div',
 	                null,
