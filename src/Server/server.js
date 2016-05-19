@@ -35,7 +35,7 @@ router.post("/message", async function(ctx, next) {
         port : 587,
         auth: {
             user: 'ashuanindian@gmail.com',
-            pass: '09101990'
+            pass: 'lwslrnvimfvbvgdz'
         },
         debug : true
     };
