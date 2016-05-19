@@ -85,8 +85,7 @@ router.post("/message", function () {
 
                         options = {
                             service: 'gmail',
-                            ssl: true,
-                            port: 465,
+                            port: 587,
                             auth: {
                                 user: 'ashuanindian@gmail.com',
                                 pass: '09101990'
