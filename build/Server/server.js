@@ -51,7 +51,6 @@ var app = new _koa2.default(); /**
                                 */
 
 app.use((0, _koaBunyanLogger2.default)());
-app.use(_koaBunyanLogger2.default.requestIdContext());
 app.use(_koaBunyanLogger2.default.requestLogger());
 var router = new _koaRouter2.default();
 

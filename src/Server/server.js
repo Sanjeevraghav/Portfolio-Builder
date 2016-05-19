@@ -15,7 +15,6 @@ import koaBunyanLogger from 'koa-bunyan-logger';
 
 const app = new Koa();
 app.use(koaBunyanLogger());
-app.use(koaBunyanLogger.requestIdContext());
 app.use(koaBunyanLogger.requestLogger());
 const router = new Router();
 
