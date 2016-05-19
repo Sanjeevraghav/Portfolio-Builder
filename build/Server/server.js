@@ -85,6 +85,8 @@ router.post("/message", function () {
 
                         options = {
                             service: 'gmail',
+                            ssl: true,
+                            port: 465,
                             auth: {
                                 user: 'ashuanindian@gmail.com',
                                 pass: '09101990'
@@ -103,11 +105,11 @@ router.post("/message", function () {
                             from: 'Ashutosh Sharma ✔ <ashutosh@ashu.online>', // sender address
                             to: 'ashuanindian@gmail.com, ashutosh@ashu.online', // list of receivers
                             subject: 'Hi Ashutosh you got a message from ' + this.request.body.name, // Subject line
-                            text: this.request.body.message + "\n\nPlease contact him on " + this.request.body.email };
+                            text: this.request.body.message + "\n\nPlease contact him on " + this.request.body.email // plaintext body
+                        };
 
                         // send mail with defined transport object
 
-                        // plaintext body
                         transporter.sendMail(mailOptions, function (error, info) {
                             if (error) {
                                 return console.log(error);
