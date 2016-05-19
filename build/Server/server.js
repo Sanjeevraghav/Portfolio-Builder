@@ -40,13 +40,19 @@ var _nodemailerSmtpTransport = require('nodemailer-smtp-transport');
 
 var _nodemailerSmtpTransport2 = _interopRequireDefault(_nodemailerSmtpTransport);
 
+var _koaBunyanLogger = require('koa-bunyan-logger');
+
+var _koaBunyanLogger2 = _interopRequireDefault(_koaBunyanLogger);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Created by ashutosh on 23/04/16.
- */
+var app = new _koa2.default(); /**
+                                * Created by ashutosh on 23/04/16.
+                                */
 
-var app = new _koa2.default();
+app.use((0, _koaBunyanLogger2.default)());
+app.use(_koaBunyanLogger2.default.requestIdContext());
+app.use(_koaBunyanLogger2.default.requestLogger());
 var router = new _koaRouter2.default();
 
 app.use((0, _koaCompress2.default)({ flush: _zlib2.default.Z_SYNC_FLUSH }));
