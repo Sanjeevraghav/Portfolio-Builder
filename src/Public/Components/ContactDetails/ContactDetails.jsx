@@ -2,6 +2,20 @@ import React, {Component} from 'react';
 import Header from '../Header/Header.jsx';
 
 class ContactDetails extends Component {
+    submitForm() {
+        let url = "/message?name=" + document.getElementById("name").value + "&email=" + document.getElementById("email").value + "&message=" + document.getElementById("messagetxt").value;
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.onload = function (e) {
+            if (this.responseText === "Success")
+                document.getElementById("responseMessage").innerHTML = "Thanks for writing me, soon I will contact you";
+            else
+                document.getElementById("responseMessage").innerHTML = "Sorry, difficulty in sending message";
+        };
+        xhr.send();
+        return false;
+    }
+
     render() {
         let alignDiv = {
             "float": "left",
@@ -26,38 +40,40 @@ class ContactDetails extends Component {
         let txtareaStyle = {
             "height": "30vh"
         };
-        let showMessage = function(){
-            alert("hello");
-        };
         let parentIconDiv = {
-            "width" : "100px",
-            "position" : "absolute",
-            "left" : "calc(50% - 30px)",
-            "top" : "calc(50% - 60px)"
+            "width": "100px",
+            "position": "absolute",
+            "left": "calc(50% - 30px)",
+            "top": "calc(50% - 60px)"
         };
         let socialicon = {
-          "width" : "30px",
-            "height" : "30px"
+            "width": "30px",
+            "height": "30px"
         };
         let alignicon = "right";
+        let styleonSuccessMessage = {
+            "textAlign": "center",
+            "width": "100%",
+            "color": "rgb(157, 185, 206)"
+        };
         return (
             <div>
                 <Header image={this.props.about.img} Name={this.props.about.Name}/>
                 <div style={parentIconDiv}>
                     {
-                        this.props.contact.Links.map( link => {
-                            let style= {
-                                "textAlign" : alignicon,
-                                "width" : "60px"
+                        this.props.contact.Links.map(link => {
+                            let style = {
+                                "textAlign": alignicon,
+                                "width": "60px"
                             };
                             alignicon = (alignicon === "left") ? "right" : "left";
-                           return (
-                               <div style={style}>
-                                   <a href={link.src} target="_blank">
-                                       <img src={"../../Images/"+link.icon} style={socialicon}/>
-                                   </a>
-                               </div>
-                           )
+                            return (
+                                <div style={style}>
+                                    <a href={link.src} target="_blank">
+                                        <img src={"../../Images/"+link.icon} style={socialicon}/>
+                                    </a>
+                                </div>
+                            )
                         })
                     }
                 </div>
@@ -109,20 +125,22 @@ class ContactDetails extends Component {
                     </div>
                 </div>
                 <div style={alignDiv}>
+                    <div style={styleonSuccessMessage}><span id="responseMessage"></span></div>
                     <form id="message" role="form" method="POST" action="/message">
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" name="name" className="form-control"/>
+                            <input id="name" type="text" name="name" className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label for="email">Email address:</label>
-                            <input type="email" name="email" className="form-control"/>
+                            <input id="email" type="email" name="email" className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label for="message">Message:</label>
-                            <textarea name="message" style={txtareaStyle} type="text" className="form-control"/>
+                            <textarea id="messagetxt" name="message" style={txtareaStyle} type="text"
+                                      className="form-control"/>
                         </div>
-                        <button type="submit" className="btn btn-default">Submit</button>
+                        <button type="button" className="btn btn-default" onClick={this.submitForm}>Submit</button>
                     </form>
 
                 </div>

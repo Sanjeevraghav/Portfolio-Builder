@@ -28,9 +28,9 @@ var _zlib = require('zlib');
 
 var _zlib2 = _interopRequireDefault(_zlib);
 
-var _koaBodyparser = require('koa-bodyparser');
+var _koaQs = require('koa-qs');
 
-var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
+var _koaQs2 = _interopRequireDefault(_koaQs);
 
 var _nodemailer = require('nodemailer');
 
@@ -53,12 +53,10 @@ var app = new _koa2.default(); /**
 app.use((0, _koaBunyanLogger2.default)());
 app.use(_koaBunyanLogger2.default.requestLogger());
 var router = new _koaRouter2.default();
-
 app.use((0, _koaCompress2.default)({ flush: _zlib2.default.Z_SYNC_FLUSH }));
-app.use((0, _koaBodyparser2.default)());
 app.use((0, _koaStatic2.default)(__dirname + "/../Public"));
 app.use(router.middleware());
-
+(0, _koaQs2.default)(app);
 router.get("/", function () {
     var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(ctx, next) {
         return _regenerator2.default.wrap(function _callee$(_context) {
@@ -72,7 +70,7 @@ router.get("/", function () {
                         return _context.stop();
                 }
             }
-        }, _callee, this);
+        }, _callee, undefined);
     }));
     return function (_x, _x2) {
         return ref.apply(this, arguments);
@@ -86,8 +84,7 @@ router.post("/message", function () {
             while (1) {
                 switch (_context2.prev = _context2.next) {
                     case 0:
-                        console.log(this.request.body);
-
+                        console.log(this.query);
                         options = {
                             service: 'Gmail',
                             port: 587,
@@ -106,8 +103,8 @@ router.post("/message", function () {
                         mailOptions = {
                             from: 'Ashutosh Sharma ✔ <ashutosh@ashu.online>', // sender address
                             to: 'ashuanindian@gmail.com, ashutosh@ashu.online', // list of receivers
-                            subject: 'Hi Ashutosh you got a message from ' + this.request.body.name, // Subject line
-                            text: this.request.body.message + "\n\nPlease contact him on " + this.request.body.email // plaintext body
+                            subject: 'Hi Ashutosh you got a message from ' + this.query.name, // Subject line
+                            text: this.query.message + "\n\nPlease contact s/he on " + this.query.email // plaintext body
                         };
 
                         // send mail with defined transport object
@@ -118,13 +115,9 @@ router.post("/message", function () {
                             }
                             console.log('Message sent: ' + info.response);
                         });
-                        _context2.next = 7;
-                        return (0, _koaStatic2.default)('../Public/index.html');
+                        this.body = "Success";
 
-                    case 7:
-                        this.body = _context2.sent;
-
-                    case 8:
+                    case 6:
                     case 'end':
                         return _context2.stop();
                 }
@@ -135,6 +128,5 @@ router.post("/message", function () {
         return ref.apply(this, arguments);
     };
 }());
-
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
 //# sourceMappingURL=server.js.map

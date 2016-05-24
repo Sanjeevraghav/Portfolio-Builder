@@ -8,7 +8,7 @@ import serve from 'koa-static';
 import Router from 'koa-router';
 import compress from 'koa-compress';
 import zlib from 'zlib';
-import bodyparser from 'koa-bodyparser';
+import qs from 'koa-qs';
 import nodemailer from 'nodemailer';
 import smtpTransport from 'nodemailer-smtp-transport';
 import koaBunyanLogger from 'koa-bunyan-logger';
@@ -17,19 +17,16 @@ const app = new Koa();
 app.use(koaBunyanLogger());
 app.use(koaBunyanLogger.requestLogger());
 const router = new Router();
-
 app.use(compress({flush:zlib.Z_SYNC_FLUSH}));
-app.use(bodyparser());
 app.use(serve(__dirname + "/../Public"));
 app.use(router.middleware());
-
-router.get("/", async function(ctx, next){
+qs(app);
+router.get("/", async (ctx, next) => {
     serve('../Public/index.html');
 });
 
-router.post("/message", async function(ctx, next) {
-    console.log(this.request.body);
-
+router.post("/message", async function(ctx, next){
+    console.log(this.query);
     let options = {
         service: 'Gmail',
         port : 587,
@@ -46,8 +43,8 @@ router.post("/message", async function(ctx, next) {
     let mailOptions = {
         from: 'Ashutosh Sharma ✔ <ashutosh@ashu.online>', // sender address
         to: 'ashuanindian@gmail.com, ashutosh@ashu.online', // list of receivers
-        subject: 'Hi Ashutosh you got a message from '+ this.request.body.name, // Subject line
-        text: this.request.body.message + "\n\nPlease contact him on "+ this.request.body.email // plaintext body
+        subject: 'Hi Ashutosh you got a message from '+ this.query.name, // Subject line
+        text: this.query.message + "\n\nPlease contact s/he on "+ this.query.email // plaintext body
     };
 
 // send mail with defined transport object
@@ -57,7 +54,6 @@ router.post("/message", async function(ctx, next) {
         }
         console.log('Message sent: ' + info.response);
     });
-    this.body = await serve('../Public/index.html');
+    this.body = "Success";
 });
-
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
