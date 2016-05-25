@@ -1,5 +1,9 @@
 'use strict';
 
+var _promise = require('babel-runtime/core-js/promise');
+
+var _promise2 = _interopRequireDefault(_promise);
+
 var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -20,9 +24,17 @@ var _koaRouter = require('koa-router');
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
+var _koaSend = require('koa-send');
+
+var _koaSend2 = _interopRequireDefault(_koaSend);
+
 var _koaCompress = require('koa-compress');
 
 var _koaCompress2 = _interopRequireDefault(_koaCompress);
+
+var _asyncBusboy = require('async-busboy');
+
+var _asyncBusboy2 = _interopRequireDefault(_asyncBusboy);
 
 var _zlib = require('zlib');
 
@@ -55,7 +67,8 @@ app.use(_koaBunyanLogger2.default.requestLogger());
 var router = new _koaRouter2.default();
 app.use((0, _koaCompress2.default)({ flush: _zlib2.default.Z_SYNC_FLUSH }));
 app.use((0, _koaStatic2.default)(__dirname + "/../Public"));
-app.use(router.middleware());
+app.use(router.routes());
+app.use(router.allowedMethods());
 (0, _koaQs2.default)(app);
 router.get("/", function () {
     var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(ctx, next) {
@@ -63,9 +76,10 @@ router.get("/", function () {
             while (1) {
                 switch (_context.prev = _context.next) {
                     case 0:
-                        (0, _koaStatic2.default)('../Public/index.html');
+                        _context.next = 2;
+                        return (0, _koaSend2.default)(ctx, '../Public/index.html');
 
-                    case 1:
+                    case 2:
                     case 'end':
                         return _context.stop();
                 }
@@ -77,14 +91,43 @@ router.get("/", function () {
     };
 }());
 
-router.post("/message", function () {
+router.get("/resume", function () {
     var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(ctx, next) {
-        var options, transporter, mailOptions;
         return _regenerator2.default.wrap(function _callee2$(_context2) {
             while (1) {
                 switch (_context2.prev = _context2.next) {
                     case 0:
-                        console.log(this.query);
+                        _context2.next = 2;
+                        return (0, _koaSend2.default)(ctx, 'Ashutosh-Resume.pdf', { root: __dirname + '/../Public/' });
+
+                    case 2:
+                    case 'end':
+                        return _context2.stop();
+                }
+            }
+        }, _callee2, undefined);
+    }));
+    return function (_x3, _x4) {
+        return ref.apply(this, arguments);
+    };
+}());
+
+router.post("/message", function () {
+    var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(ctx, next) {
+        var _ref, fields, options, transporter, mailOptions;
+
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+            while (1) {
+                switch (_context3.prev = _context3.next) {
+                    case 0:
+                        _context3.next = 2;
+                        return (0, _asyncBusboy2.default)(ctx.req);
+
+                    case 2:
+                        _ref = _context3.sent;
+                        fields = _ref.fields;
+
+                        console.log(fields);
                         options = {
                             service: 'Gmail',
                             port: 587,
@@ -103,28 +146,34 @@ router.post("/message", function () {
                         mailOptions = {
                             from: 'Ashutosh Sharma ✔ <ashutosh@ashu.online>', // sender address
                             to: 'ashuanindian@gmail.com, ashutosh@ashu.online', // list of receivers
-                            subject: 'Hi Ashutosh you got a message from ' + this.query.name, // Subject line
-                            text: this.query.message + "\n\nPlease contact s/he on " + this.query.email // plaintext body
+                            subject: 'Hi Ashutosh you got a message from ' + fields.name, // Subject line
+                            text: fields.message + "\n\nPlease contact s/he on " + fields.email // plaintext body
                         };
 
                         // send mail with defined transport object
 
-                        transporter.sendMail(mailOptions, function (error, info) {
-                            if (error) {
-                                return console.log(error);
-                            }
-                            console.log('Message sent: ' + info.response);
+                        _context3.next = 10;
+                        return new _promise2.default(function (resolve, reject) {
+                            transporter.sendMail(mailOptions, function (error, info) {
+                                if (error) {
+                                    reject("error");
+                                }
+                                console.log('Message sent: ' + info.response);
+                                resolve("Success");
+                            });
                         });
-                        this.body = "Success";
 
-                    case 6:
+                    case 10:
+                        ctx.body = _context3.sent;
+
+                    case 11:
                     case 'end':
-                        return _context2.stop();
+                        return _context3.stop();
                 }
             }
-        }, _callee2, this);
+        }, _callee3, this);
     }));
-    return function (_x3, _x4) {
+    return function (_x5, _x6) {
         return ref.apply(this, arguments);
     };
 }());

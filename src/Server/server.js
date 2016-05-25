@@ -6,7 +6,9 @@
 import Koa from 'koa';
 import serve from 'koa-static';
 import Router from 'koa-router';
+import send from 'koa-send';
 import compress from 'koa-compress';
+import asyncBusboy from 'async-busboy';
 import zlib from 'zlib';
 import qs from 'koa-qs';
 import nodemailer from 'nodemailer';
@@ -17,24 +19,30 @@ const app = new Koa();
 app.use(koaBunyanLogger());
 app.use(koaBunyanLogger.requestLogger());
 const router = new Router();
-app.use(compress({flush:zlib.Z_SYNC_FLUSH}));
+app.use(compress({flush: zlib.Z_SYNC_FLUSH}));
 app.use(serve(__dirname + "/../Public"));
-app.use(router.middleware());
+app.use(router.routes());
+app.use(router.allowedMethods());
 qs(app);
 router.get("/", async (ctx, next) => {
-    serve('../Public/index.html');
+    await send(ctx, '../Public/index.html');
 });
 
-router.post("/message", async function(ctx, next){
-    console.log(this.query);
+router.get("/resume", async (ctx, next) => {
+    await send(ctx, 'Ashutosh-Resume.pdf', {root: __dirname + '/../Public/'});
+});
+
+router.post("/message", async function (ctx, next) {
+    const {fields} = await asyncBusboy(ctx.req);
+    console.log(fields);
     let options = {
         service: 'Gmail',
-        port : 587,
+        port: 587,
         auth: {
             user: 'ashuanindian@gmail.com',
             pass: 'lwslrnvimfvbvgdz'
         },
-        debug : true
+        debug: true
     };
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport(smtpTransport(options));
@@ -43,17 +51,19 @@ router.post("/message", async function(ctx, next){
     let mailOptions = {
         from: 'Ashutosh Sharma ✔ <ashutosh@ashu.online>', // sender address
         to: 'ashuanindian@gmail.com, ashutosh@ashu.online', // list of receivers
-        subject: 'Hi Ashutosh you got a message from '+ this.query.name, // Subject line
-        text: this.query.message + "\n\nPlease contact s/he on "+ this.query.email // plaintext body
+        subject: 'Hi Ashutosh you got a message from ' + fields.name, // Subject line
+        text: fields.message + "\n\nPlease contact s/he on " + fields.email // plaintext body
     };
 
 // send mail with defined transport object
-        transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            return console.log(error);
-        }
-        console.log('Message sent: ' + info.response);
+    ctx.body = await new Promise(function(resolve, reject) {
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                reject("error");
+            }
+            console.log('Message sent: ' + info.response);
+            resolve("Success");
+        });
     });
-    this.body = "Success";
 });
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');

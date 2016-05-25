@@ -18,6 +18,11 @@ class Home extends Component {
                     <span className="animate animateRight"><span className="white_sm_txt">I'M A</span>&nbsp;<span
                     className="white_l_txt">{this.props.home.Designation}</span></span>
                 </div>
+                <div className="properDiv white_sm_txt">
+                    <span className="animate animateUp">
+                        <a type="button" href="/resume" download="Ashutosh-Resume" className="btn btn-primary">Download Resume</a>
+                    </span>
+                </div>
             </div>
         );
     }

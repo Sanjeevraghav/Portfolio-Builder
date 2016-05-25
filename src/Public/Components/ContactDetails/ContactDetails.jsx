@@ -2,17 +2,29 @@ import React, {Component} from 'react';
 import Header from '../Header/Header.jsx';
 
 class ContactDetails extends Component {
-    submitForm() {
-        let url = "/message?name=" + document.getElementById("name").value + "&email=" + document.getElementById("email").value + "&message=" + document.getElementById("messagetxt").value;
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', url, true);
+    submitForm(){
+        //let url = "/message?name=" + document.getElementById("name").value + "&email=" + document.getElementById("email").value + "&message=" + document.getElementById("messagetxt").value;
+        let formData = new FormData();
+        formData.append('name', document.getElementById("name").value);
+        formData.append('email', document.getElementById("email").value);
+        formData.append('message', document.getElementById("messagetxt").value);
+
+        let xhr;
+
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.open('POST', '/message', true);
         xhr.onload = function (e) {
             if (this.responseText === "Success")
                 document.getElementById("responseMessage").innerHTML = "Thanks for writing me, soon I will contact you";
             else
                 document.getElementById("responseMessage").innerHTML = "Sorry, difficulty in sending message";
         };
-        xhr.send();
+        xhr.send(formData);
         return false;
     }
 

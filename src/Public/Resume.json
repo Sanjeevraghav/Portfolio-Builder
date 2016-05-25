@@ -62,7 +62,7 @@
       "ResponsibilitiesAndAchievements": [
         "Developed REST service to maintain workspaces to store and serve raster and vector layers from GeoServer.",
         "Captured flight data and used it to place flight icon on map in 4 different states(default, bound to snapExtents, bound to videoExtents and center map to flight icon).",
-        "Import-Export facility which exports data from one Geo Server and imports into another.",
+        "Import-Export facility which exports data from one Server and imports into another.",
         "Worked extensively on openlayers API."
       ]
     },
