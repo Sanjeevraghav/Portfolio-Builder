@@ -126,14 +126,12 @@ router.post("/message", function () {
                     case 2:
                         _ref = _context3.sent;
                         fields = _ref.fields;
-
-                        console.log(fields);
                         options = {
                             service: 'Gmail',
                             port: 587,
                             auth: {
                                 user: 'ashuanindian@gmail.com',
-                                pass: 'lwslrnvimfvbvgdz'
+                                pass: '*********'
                             },
                             debug: true
                         };
@@ -152,7 +150,7 @@ router.post("/message", function () {
 
                         // send mail with defined transport object
 
-                        _context3.next = 10;
+                        _context3.next = 9;
                         return new _promise2.default(function (resolve, reject) {
                             transporter.sendMail(mailOptions, function (error, info) {
                                 if (error) {
@@ -163,10 +161,10 @@ router.post("/message", function () {
                             });
                         });
 
-                    case 10:
+                    case 9:
                         ctx.body = _context3.sent;
 
-                    case 11:
+                    case 10:
                     case 'end':
                         return _context3.stop();
                 }

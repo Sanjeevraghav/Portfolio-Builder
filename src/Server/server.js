@@ -14,7 +14,6 @@ import qs from 'koa-qs';
 import nodemailer from 'nodemailer';
 import smtpTransport from 'nodemailer-smtp-transport';
 import koaBunyanLogger from 'koa-bunyan-logger';
-
 const app = new Koa();
 app.use(koaBunyanLogger());
 app.use(koaBunyanLogger.requestLogger());
@@ -34,13 +33,12 @@ router.get("/resume", async (ctx, next) => {
 
 router.post("/message", async function (ctx, next) {
     const {fields} = await asyncBusboy(ctx.req);
-    console.log(fields);
     let options = {
         service: 'Gmail',
         port: 587,
         auth: {
             user: 'ashuanindian@gmail.com',
-            pass: 'lwslrnvimfvbvgdz'
+            pass: '*********'
         },
         debug: true
     };
